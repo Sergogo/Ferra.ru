@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ru.ferra"
+          android:versionCode="1"
+          android:versionName="1.0"
+          android:installLocation="preferExternal">
+
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+        <activity android:name=".ui.Application" android:label="@string/app_name" android:theme="@android:style/Theme.Light.NoTitleBar" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.NewsActivity"/>
+        <activity android:name=".ui.ArticlesActivity"/>
+        <activity android:name=".ui.ArticleViewActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name=".ui.Settings" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name=".ui.AboutActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name=".ui.ImageWebView"/>
+
+        <provider android:name=".providers.ArticleProvider" android:authorities="ru.ferra.provider.articleprovider"/>
+    </application>
+</manifest> 

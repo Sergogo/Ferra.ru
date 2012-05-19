@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:src="@drawable/rubric_title_line" />
+
+    <TextView
+        android:id="@+id/rubric_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:paddingLeft="2dp"
+        android:textColor="#050505"
+        android:textSize="@dimen/rubric_text_medium"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <HorizontalScrollView
+        android:id="@+id/rubric_scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/rubric_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp" >
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <dimen name="about_screen_font_size">15.0dip</dimen>
+    <dimen name="tile_text_small">9.0sp</dimen>
+    <dimen name="tile_text_medium">11.0sp</dimen>
+    <dimen name="tile_text_large">13.0sp</dimen>
+    
+    <dimen name="rubric_text_small">12.0sp</dimen>
+    <dimen name="rubric_text_medium">14.0sp</dimen>
+    <dimen name="rubric_text_large">16.0sp</dimen>
+
+    <dimen name="news_list_text_small">10.0sp</dimen>
+    <dimen name="news_list_text_medium">12.0sp</dimen>
+    <dimen name="news_list_text_large">14.0sp</dimen>
+
+    <dimen name="image_size_small">80.0dp</dimen>
+    <dimen name="image_size_medium">90.0dp</dimen>
+    <dimen name="image_size_large">100.0dp</dimen>
+</resources>

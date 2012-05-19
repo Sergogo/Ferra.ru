@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="rubrics">
+        <item>news</item>
+        <item>notebooks</item>
+        <item>mobile</item>
+        <item>digiphoto</item>
+        <item>multimedia</item>
+        <item>system</item>
+        <item>video</item>
+        <item>storage</item>
+        <item>casecool</item>
+        <item>periphery</item>
+        <item>networks</item>
+        <item>soft</item>
+        <item>techlife</item>
+        <item>digihome</item>
+        <item>epads</item>
+        <item>3d</item>
+        <item>byt</item>
+    </string-array>
+    
+    <string-array name="rubrics_native">
+        <item>Новости</item>
+        <item>Ноутбуки</item>
+        <item>Мобильные</item>
+        <item>Цифрография</item>
+        <item>Звук и акустика</item>
+        <item>Платформа ПК</item>
+        <item>Видео</item>
+        <item>Накопители</item>
+        <item>Корпуса и БП</item>
+        <item>Периферия</item>
+        <item>Сети и серверы</item>
+        <item>Софт и игры</item>
+        <item>Техножизнь</item>
+        <item>Цифровой дом</item>
+        <item>Планшеты и книги</item>
+        <item>3D</item>
+        <item>Бытовая Техника</item>
+    </string-array>
+
+</resources>

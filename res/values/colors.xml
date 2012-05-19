@@ -1,0 +1,8 @@
+<resources>
+    <color name="read_article">#ff707070</color>
+    <color name="unread_article">#010101</color>
+    <color name="title_background">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="header_background">#99000000</color>
+</resources>

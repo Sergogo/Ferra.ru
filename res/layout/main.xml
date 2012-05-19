@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+         android:id="@android:id/tabhost"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent" >
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#fff">
+
+        <ImageView
+                android:id="@+id/logo"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="7dp"
+                android:src="@drawable/ferra_ru_black"/>
+        <ProgressBar
+                android:id="@+id/load_progress"
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_toRightOf="@id/logo"
+                style="@android:style/Widget.ProgressBar.Inverse"
+                android:visibility="invisible"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+            />
+        <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:layout_above="@android:id/tabcontent"
+                android:layout_toRightOf="@id/load_progress"
+                android:paddingTop="4dp">
+        </TabWidget>
+        <!--android:tabStripEnabled="false"-->
+
+        <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/logo"
+                />
+    </RelativeLayout>
+
+</TabHost>

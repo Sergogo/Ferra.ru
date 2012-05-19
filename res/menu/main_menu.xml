@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_refresh"
+          android:icon="@drawable/ic_menu_refresh"
+          android:title="@string/menu_refresh"/>
+
+    <item android:id="@+id/menu_preferences"
+          android:icon="@drawable/ic_menu_preferences"
+          android:title="@string/menu_preferences"/>
+
+    <item android:id="@+id/menu_about"
+          android:icon="@drawable/ic_menu_help"
+          android:title="@string/about"/>
+
+    <item android:id="@+id/menu_fullscreen_on"
+          android:icon="@drawable/ic_menu_fullscreen"
+          android:title="@string/menu_fullscreen_on"/>
+    
+    <item android:id="@+id/menu_fullscreen_off"
+          android:icon="@drawable/ic_menu_fullscreen"
+          android:title="@string/menu_fullscreen_off"/>
+
+<!--     <item android:id="@+id/menu_text_size" -->
+<!--         android:title="@string/menu_text_size"/> -->
+</menu>

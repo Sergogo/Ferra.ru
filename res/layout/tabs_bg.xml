@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_bg_selector">
+
+    <!--     <TextView -->
+    <!--         android:id="@+id/tabsText" -->
+    <!--         android:layout_width="35pt" -->
+    <!--         android:layout_height="14pt" -->
+    <!--         android:layout_centerInParent="true" -->
+    <!--         android:paddingLeft="3pt" -->
+    <!--         android:text="Titlesdfsdf" -->
+    <!--         android:textColor="@color/tab_text_selector" -->
+    <!--         android:textSize="16sp" /> -->
+
+    <TextView
+            android:id="@+id/tabsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Title123123"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:lines="1"
+            />
+
+</RelativeLayout>

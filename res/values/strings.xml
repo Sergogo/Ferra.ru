@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ferra.ru</string>
+    <string name="tab_news">Новости</string>
+    <string name="tab_articles">Статьи </string>
+    <string name="menu_preferences">Настройки</string>
+    <string name="menu_refresh">Обновить</string>
+    <string name="menu_clear">Очистить кэш</string>
+    <string name="menu_fullscreen_on">Вкл. на весь экран</string>
+    <string name="menu_fullscreen_off">Выкл. на весь экран</string>
+    <string name="menu_text_size">Размер шрифта</string>
+    <string name="settings_title">Подключение</string>
+    <string name="settings_cache">Статьи</string>
+    <string name="settings_cache_delete_articles">Удалить статьи</string>
+    <string name="settings_cache_delete_articles_sum">Удалить сохраненные статьи</string>
+    <string name="cache_delete_articles_confirm">Вы действительно хотите удалить сохраненные статьи?</string>
+    <string name="settings_cache_delete_images">Удалить картинки</string>
+    <string name="settings_cache_delete_images_sum">Удалить все сохраненные картинки</string>
+    <string name="cache_delete_images_confirm">Вы действительно хотите удалить сохраненные картинки?</string>
+    <string name="settings_wifi_summary">Использовать только Wi-Fi подключение</string>
+    
+    <string name="font_large">Крупный</string>
+    <string name="font_medium">Средний</string>
+    <string name="font_small">Мелкий</string>
+    <string name="settings_font_size">Шрифт</string>
+    <string name="settings_refresh_article">Обновить</string>
+    <string name="settings_list_font_size">Размер шрифта для списков</string>
+    <string name="settings_list_font_size_sum">Шрифт в списках статей, новостей</string>
+    <string name="settings_article_view_font_size">Размер шрифта для статей</string>
+    <string name="settings_article_view_font_size_sum">Шрифт для отображения статей</string>
+    
+    <string name="wait_message">Выполнение</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    
+    <string name="news_category_name">Новости</string>
+
+    <string name="empty_list_text">Нет записей. Нажмите обновить для загрузки.</string>
+    <string name="loading">Подождите, идет загрузка.</string>
+    <string name="wifi_error">Ошибка Wi-Fi соединения. Повторите попытку позже.</string>
+    <string name="network_error">Ошибка соединения. Повторите попытку позже.</string>
+
+    <string name="share_subject">Привет! Хочу поделиться новостью.</string>
+
+    <string name="about">О программе</string>
+
+    <string name="version">Версия</string>
+
+    <string name="copyright">Авторские права на все материалы, использованные в программе, принадлежат проекту Ferra.ru.</string>
+
+    <string name="author">Nikolai Zapolski, 2012</string>
+</resources>

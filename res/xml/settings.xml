@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/settings_title" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="settings_wifi_use"
+            android:persistent="true"
+            android:summary="@string/settings_wifi_summary"
+            android:title="Wi-Fi" />
+    </PreferenceCategory>
+
+    <android.preference.PreferenceCategory android:title="@string/settings_cache" >
+        <Preference
+            android:key="cache_articles_del"
+            android:summary="@string/settings_cache_delete_articles_sum"
+            android:title="@string/settings_cache_delete_articles" />
+        <Preference
+            android:key="cache_images_del"
+            android:summary="@string/settings_cache_delete_images_sum"
+            android:title="@string/settings_cache_delete_images" />
+    </android.preference.PreferenceCategory>
+
+    <android.preference.PreferenceCategory android:title="@string/settings_font_size" >
+        <ListPreference
+            android:entries="@array/font_size_options"
+            android:entryValues="@array/font_size_values"
+            android:key="font_list_size"
+            android:summary="@string/settings_list_font_size_sum"
+            android:title="@string/settings_list_font_size" 
+            android:persistent="true"
+            android:defaultValue="medium"/>
+        <ListPreference
+            android:entries="@array/font_size_options"
+            android:entryValues="@array/font_size_values"
+            android:key="font_article_size"
+            android:summary="@string/settings_article_view_font_size_sum"
+            android:title="@string/settings_article_view_font_size"
+            android:persistent="true"
+            android:defaultValue="medium"/>
+    </android.preference.PreferenceCategory>
+
+</PreferenceScreen>
