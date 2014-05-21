@@ -85,6 +85,7 @@ public class ArticleProvider extends ContentProvider {
 	public Cursor query(Uri uri, String[] strings, String s, String[] strings1, String s1) {
 		SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
 
+		Log.i(Constants.TAG, "DEBUG QUERY URI:" + uri);
 		String sortOrder;
 		switch (uriMatcher.match(uri)) {
 		case RUBRIC_ID:
@@ -117,6 +118,8 @@ public class ArticleProvider extends ContentProvider {
 	public Uri insert(Uri uri, ContentValues contentValues) {
 		int uriType = uriMatcher.match(uri);
 
+		Log.i(Constants.TAG, "DEBUG INSERT URI:" + uri);
+
 		ContentValues values;
 		if (contentValues == null) {
 			values = new ContentValues();
@@ -127,7 +130,7 @@ public class ArticleProvider extends ContentProvider {
 		if (uriType == ARTICLE) {
 			long l = dbHelper.getWritableDatabase().insert(DBHelper.ARTICLE_TABLE, null, values);
 			if (l <= 0L) {
-				Log.e(Constants.TAG, "Failed to insert row into " + uri);
+				Log.i(Constants.TAG, "Failed to insert row into " + uri);
 			}
 
 			return ContentUris.withAppendedId(Article.CONTENT_URI, l);
@@ -135,8 +138,9 @@ public class ArticleProvider extends ContentProvider {
 		if (uriType == IMAGES) {
 			long l = dbHelper.getWritableDatabase().insert(DBHelper.IMAGES_TABLE, null, values);
 			if (l <= 0L)
-				Log.e(Constants.TAG, "Failed to insert row into " + uri);
+				Log.i(Constants.TAG, "Failed to insert row into " + uri);
 
+			Log.i(Constants.TAG, "INSERT IMAGE RES: " + l);
 			return ContentUris.withAppendedId(Image.CONTENT_URI, l);
 
 		}
@@ -163,6 +167,7 @@ public class ArticleProvider extends ContentProvider {
 					null);
 
 			cursor.moveToFirst();
+			Log.i(Constants.TAG, "DEBUG OPENFILE URI:" + uri);
 			f = new File(cursor.getString(1));
 
 			imageUrl = new URL(cursor.getString(0));
@@ -203,8 +208,15 @@ public class ArticleProvider extends ContentProvider {
 		String filePath = "";
 
 		try {
-			File cacheFolder = new File(Environment.getExternalStorageDirectory()
-					+ Constants.CACHE_DIR);
+			String sstate = Environment.getExternalStorageState();
+			Log.i(Constants.TAG, "DEBUG STORAGE STATE:" + sstate);
+			Log.i(Constants.TAG, "DEBUG LOCALNAME:" + localName);
+
+			//File cacheFolder = new File(Environment.getExternalStorageDirectory() + Constants.CACHE_DIR);
+			//File cacheFolder = new File(Environment.getDownloadCacheDirectory() + Constants.CACHE_DIR);
+			//File cacheFolder = new File(getContext().getExternalFilesDir(null) + Constants.CACHE_DIR);
+			File cacheFolder = new File(getContext().getFilesDir() + Constants.CACHE_DIR);
+//			File cacheFolder = new File(Environment.getDataDirectory() + Constants.CACHE_DIR);
 			if (!cacheFolder.exists()) {
 				cacheFolder.mkdirs();
 			}

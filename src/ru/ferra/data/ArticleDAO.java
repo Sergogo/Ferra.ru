@@ -17,6 +17,8 @@ import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
+import android.util.Log;
+
 
 public class ArticleDAO {
 	public RssArticle createArticle(Context context, int rubricId) {
@@ -38,6 +40,7 @@ public class ArticleDAO {
 
 	public RssArticle createAndUpdateArticle(Context context, RssArticle article, int rubricId) {
 		ContentResolver contentResolver = context.getContentResolver();
+		Log.i(Constants.TAG,"LETS ADD ARTICLE ");
 
 		ContentValues articleAttributes = new ContentValues();
 
@@ -80,7 +83,7 @@ public class ArticleDAO {
 			url = new URL(url.getProtocol(), url.getHost(), newImgUrl.toString());
 
 			StringBuilder path = new StringBuilder();
-			path.append(Environment.getExternalStorageDirectory());
+			path.append(context.getFilesDir());
 			path.append(Constants.CACHE_DIR);
 			path.append("/");
 			path.append(id);
@@ -121,7 +124,7 @@ public class ArticleDAO {
 		StringBuilder baseImageUrlPath = new StringBuilder();
 		StringBuilder baseImagePath = new StringBuilder();
 
-		baseImagePath.append(Environment.getExternalStorageDirectory());
+		baseImagePath.append(context.getFilesDir());
 		baseImagePath.append(Constants.CACHE_DIR);
 
 		baseImageUrlPath.append("/");
@@ -129,7 +132,7 @@ public class ArticleDAO {
 		baseImageUrlPath.append("x");
 		baseImageUrlPath.append(size);
 
-		System.out.println("createAndUpdateArticle " + article.getTitle());
+		Log.i(Constants.TAG, "CREATE_AND_UPDATE_ARTICLE " + article.getTitle());
 		for (long id : imagesCache.keySet()) {
 			try {
 				URL url = new URL(imagesCache.get(id));
@@ -266,6 +269,9 @@ public class ArticleDAO {
 		String selectClause = ArticleProvider.Article.RUBRIC_ID + " = ?";
 		String[] selectArg = { String.valueOf(rubricId) };
 
+		Log.i(Constants.TAG, "GET ARTICLES FULL");
+
+
 		Cursor cursor = contentResolver.query(ArticleProvider.Article.CONTENT_URI, columns,
 				selectClause, selectArg, null);
 		cursor.moveToFirst();
@@ -355,7 +361,7 @@ public class ArticleDAO {
 		StringBuilder baseImageUrlPath = new StringBuilder();
 		StringBuilder baseImagePath = new StringBuilder();
 
-		baseImagePath.append(Environment.getExternalStorageDirectory());
+		baseImagePath.append(context.getFilesDir());
 		baseImagePath.append(Constants.CACHE_DIR);
 
 		baseImageUrlPath.append("/");
@@ -364,6 +370,7 @@ public class ArticleDAO {
 		baseImageUrlPath.append(size);
 
 		ContentValues imageAttributes = new ContentValues();
+		Log.i(Constants.TAG,"SAVE_ARTICLE " + article.getTitle());
 
 		for (long id : imagesCache.keySet()) {
 			try {

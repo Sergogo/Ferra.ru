@@ -47,7 +47,9 @@ public class ArticlePagerAdapter extends PagerAdapter implements ArticleArranger
 	"	var N = imgs.length;" +
 	"	var imgWidth;" +
 	"	for (var i = 0; i < N; i++){" +
-	"		imgs[i].src = '" + ArticleProvider.Image.CONTENT_URI +"/' + imgs[i].src;" +
+	"		alert('IMAGE I:' + i);" +
+	"		alert('IMAGE src:' + imgs[i].src);" +
+	"		imgs[i].src = '" + ArticleProvider.Image.CONTENT_URI +"/' + imgs[i].getAttribute('src');" +
 	"		imgs[i].onload = function() {" +
 	"			N = N-1;" +
 	"			if(N == 0){" +
@@ -98,7 +100,8 @@ public class ArticlePagerAdapter extends PagerAdapter implements ArticleArranger
 
 		RssArticle article = articles.get(position);
 
-		Log.i(Constants.TAG, "view article " + article.getTitle());
+		Log.i(Constants.TAG, "VIEW ARTICLE " + article.getTitle());
+		Log.i(Constants.TAG, "VIEW ARTICLE ID " + article.getId());
 
 		TextView rubric = (TextView) page.findViewById(R.id.category);
 		TextView pageNumber = (TextView) page.findViewById(R.id.page);
@@ -135,6 +138,7 @@ public class ArticlePagerAdapter extends PagerAdapter implements ArticleArranger
 		}
 
 		content.setTag(R.id.page_progress_tag, pageProgress);
+
 		content.setWebChromeClient(new WebChromeClient() {
 
 			@Override
@@ -146,18 +150,23 @@ public class ArticlePagerAdapter extends PagerAdapter implements ArticleArranger
 				return true;
 			}
 
+
 		});
+
 		content.setWebViewClient(new WebViewClient() {
 
 			@Override
 			public void onPageFinished(WebView view, String url) {
+				Log.i(Constants.TAG, "ON PAGE FINISHED");
 				if((Integer)view.getTag(R.id.page_number) == viewPager.getCurrentItem()) {
+					Log.i(Constants.TAG, "INJECT JS FOR IMAGE LOAD URL:"+url);
 					view.loadUrl(SCRIPT_INJECT);
 				}
 			}
 
 			@Override
 			public void onPageStarted(WebView view, String url, Bitmap favicon) {
+				Log.i(Constants.TAG, "ON PAGE STARTED");
 				((ProgressBar) view.getTag(R.id.page_progress_tag)).setVisibility(View.VISIBLE);
 			}
 
